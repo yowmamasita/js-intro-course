@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1024, user-scalable=no">
+
+<title>JavaScript Intro Course</title>
+
+<!-- Required stylesheet -->
+<link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+<!-- Extension CSS files go here. Remove or add as needed. -->
+<link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+<link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+<link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+<link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+<!-- Style theme. More available in /themes/style/ or create your own. -->
+<link rel="stylesheet" media="screen" href="themes/style/neon.css">
+
+<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+<link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+<!-- Basic black and white print styles -->
+<link rel="stylesheet" media="print" href="core/print.css">
+
+<!-- Required Modernizr file -->
+<script src="modernizr.custom.js"></script>
+
+<!-- highlight.js -->
+<link rel="stylesheet" href="extensions/highlight/zenburn.css">
+<script src="extensions/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+<div class="deck-container">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+# JavaScript
+</section>
+
+<section class="slide">
+## Hello World
+
+    function greetMe(yourName) {
+      alert("Hello " + yourName);
+    }
+
+    greetMe("World");
+</section>
+
+<section class="slide">
+## Hello World p.2
+
+    console.log("Hello 世界");
+
+    // or like this
+    console.log("你好", "World");
+</section>
+
+<section class="slide">
+## Declaring variables
+
+    var a;
+    console.log("The value of a is", a);
+    console.log("The value of A is", A);
+</section>
+
+<section class="slide">
+## String to Number
+
+    parseInt("1.1", 10)
+    parseFloat("1.1")
+
+## Number to String
+
+    (1.1).toString()
+    '' + 1.1
+</section>
+
+<section class="slide">
+## Variable scope
+
+    if (true) {
+      var x = 5;
+    }
+    console.log(x);
+</section>
+
+<section class="slide">
+## Data types
+
+* **Boolean**. true and false.
+* **undefined**. A top-level property whose value is undefined.
+* **Number**. 42 or 3.14159.
+* **String**. "Howdy"
+* **null**. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.
+* **Object**
+</section>
+
+<section class="slide">
+## String
+
+    "foo"
+    'bar'
+    "1234"
+    "one line \n another line"
+    "John's cat"
+    "He read \"The Cremation of Sam McGee\" by R.W. Service."
+    "\u00A92016"
+
+    "John's cat".length
+</section>
+
+<section class="slide">
+## Arrays
+
+    var coffees = ["French Roast", "Colombian", "Kona"];
+
+    /* extra commas */
+    var myList = [ , 'home', , 'school'];
+</section>
+
+<section class="slide">
+## Objects
+
+    var car = { manyCars: {a: "Saab", "b": "Jeep"}, 7: "Mazda" };
+
+    console.log(car.manyCars.b);
+    console.log(car[7]);
+</section>
+
+<section class="slide">
+## Objects p.2
+
+    var unusualPropertyNames = {
+      "": "An empty string",
+      "!": "Bang!"
+    }
+</section>
+
+<section class="slide">
+## Regex
+
+    var re = /ab+c/;
+</section>
+
+<section class="slide">
+## Math
+
+    Math.PI
+    Math.sin(1.56)
+</section>
+
+<section class="slide">
+## Date
+
+    var Xmas95 = new Date("December 25, 1995");
+    var today = new Date();
+    var endYear = new Date(1995, 11, 31, 23, 59, 59, 999);
+    endYear.setFullYear(today.getFullYear());
+    var msPerDay = 24 * 60 * 60 * 1000;
+    var daysLeft = (endYear.getTime() - today.getTime()) / msPerDay;
+    var daysLeft = Math.round(daysLeft);
+</section>
+
+<section class="slide">
+## Operators
+
+* Assignment `x = y`
+* Addition assignment `x += y`
+* Subtraction assignment `x -= y`
+* Multiplication assignment `x *= y`
+* Division assignment `x /= y`
+* Remainder assignment `x %= y`
+* Exponentiation assignment `x **= y`
+</section>
+
+<section class="slide">
+## Keywords and expressions
+
+### this
+
+Refers to the calling object in a method
+
+    this["propertyName"]
+    this.propertyName
+
+### Grouping
+
+Grouping operator `( )` controls the precedence of evaluation in expressions
+
+### new
+
+Used to create an instance of a user-defined object type or of one of the built-in object types
+
+### super
+
+Used to call functions on an object's parent
+</section>
+
+<section class="slide">
+## Arrays
+
+    var arr = new Array(10);
+    var arr = Array(10);
+
+    var arr = [];
+    arr.length = 10;
+
+    var arr = [42];
+    var arr = Array(42);
+</section>
+
+<section class="slide">
+## Arrays p.2
+
+    var emp = [];
+    emp[0] = "Casey Jones";
+    emp[1] = "Phil Lesh";
+    emp[2] = "August West";
+
+    var myArray = new Array("Hello", myVar, 3.14159);
+    var myArray = ["Mango", "Apple", "Orange"];
+
+    var arr = ["one", "two", "three"];
+    arr[2];
+    arr["length"];
+</section>
+
+<section class="slide">
+## Arrays p.3
+
+    var myArray = new Array("1", "2", "3");
+    myArray = myArray.concat("a", "b", "c");
+
+    var myArray = new Array("Wind", "Rain", "Fire");
+    var list = myArray.join(" - ");
+
+    var myArray = new Array("1", "2");
+    myArray.push("3");
+</section>
+
+<section class="slide">
+## Arrays p.4
+
+    var myArray = new Array("1", "2", "3");
+    var last = myArray.pop();
+
+    var myArray = new Array ("1", "2", "3");
+    var first = myArray.shift();
+
+    var myArray = new Array ("1", "2", "3");
+    myArray.unshift("4", "5");
+</section>
+
+<section class="slide">
+## Arrays p.5
+
+    var myArray = new Array ("a", "b", "c", "d", "e");
+    myArray = myArray.slice(1, 4);
+
+    var myArray = new Array ("1", "2", "3", "4", "5");
+    myArray.splice(1, 3, "a", "b", "c", "d");
+
+    var myArray = new Array ("1", "2", "3");
+    myArray.reverse();
+
+    var myArray = new Array("Wind", "Rain", "Fire");
+    myArray.sort();
+</section>
+
+<section class="slide">
+## Arrays p.5
+
+    var sortFn = function(a, b){
+      if (a[a.length - 1] < b[b.length - 1]) return -1;
+      if (a[a.length - 1] > b[b.length - 1]) return 1;
+      if (a[a.length - 1] == b[b.length - 1]) return 0;
+    }
+    myArray.sort(sortFn);
+
+    var a = ['a', 'b', 'a', 'b', 'a'];
+    console.log(a.indexOf('b'));
+
+</section>
+
+<section class="slide">
+## Arrays p.6
+
+    var a = ['a', 'b', 'c'];
+    a.forEach(function(element) { console.log(element);} );
+
+    var a1 = ['a', 'b', 'c'];
+    var a2 = a1.map(function(item) { return item.toUpperCase(); });
+
+    var a1 = ['a', 10, 'b', 20, 'c', 30];
+    var a2 = a1.filter(function(item) { return typeof item == 'number'; });
+</section>
+
+<section class="slide">
+## Blocks, loops, and conditional statements
+
+    function () {
+      ...
+    }
+
+    for (var x = 0; x < 10; x++) {
+      ...
+    }
+
+    while (x < 10) {
+      x++;
+    }
+
+    if (x < 10) x++;
+</section>
+
+<section class="slide">
+## Blocks, loops, and conditional statements p.2
+
+### Falsy values
+
+* `false`
+* `undefined`
+* `null`
+* `0`
+* `NaN`
+* `""`
+</section>
+
+<section class="slide">
+## Blocks, loops, and conditional statements p.3
+
+    switch (fruittype) {
+      case "Oranges":
+        console.log("Oranges are $0.59 a pound.");
+        break;
+      case "Apples":
+        console.log("Apples are $0.32 a pound.");
+        break;
+      default:
+       console.log("Sorry, we are out of " + fruittype + ".");
+    }
+</section>
+
+<section class="slide">
+## Loops and iteration
+
+* `for`
+* `do...while`
+* `while`
+* `label`
+* `break`
+* `continue`
+* `for...in`
+</section>
+
+<section class="slide">
+## Functions
+
+    function square(number) {
+      return number * number;
+    }
+
+    function myFunc(theObject) {
+      theObject.make = "Toyota";
+    }
+
+    var square = function(number) { return number * number };
+    var x = square(4);
+</section>
+
+<section class="slide">
+## Functions p.2
+
+### Recursion
+
+A function can refer to and call itself
+
+    var factorial = function fac(n) { return n<2 ? 1 : n*fac(n-1) };
+</section>
+
+<section class="slide">
+## Functions p.3
+
+### Nested functions and closures
+
+A closure is an expression (typically a function) that can have free variables together with an environment that binds those variables (that "closes" the expression)
+
+    var pet = function(name) {
+      var getName = function() {
+        return name;
+      }
+      return getName;
+    },
+    myPet = pet("Vivie");
+</section>
+
+<section class="slide">
+## Functions p.4
+
+    function myConcat(separator) {
+       var result = "", i;
+
+       for (i = 1; i < arguments.length; i++) {
+          result += arguments[i] + separator;
+       }
+       return result;
+    }
+</section>
+
+<section class="slide">
+## Functions p.5
+
+    function multiply(a, b) {
+      b = typeof b !== 'undefined' ?  b : 1;
+
+      return a*b;
+    }
+
+    multiply(5);
+</section>
+
+<section class="slide">
+## Objects
+
+    var myCar = new Object();
+    myCar.make = "Ford";
+    myCar.model = "Mustang";
+    myCar.year = 1969;
+    console.log(myCar.noProperty);
+</section>
+
+<section class="slide">
+## Objects p.2
+
+    var myCar = new Object();
+    myCar["make"] = "Ford";
+    myCar["model"] = "Mustang";
+    myCar["year"] = 1969;
+</section>
+
+<section class="slide">
+## Objects p.3
+
+    var propertyName = "make";
+    myCar[propertyName] = "Ford";
+
+    propertyName = "model";
+    myCar[propertyName] = "Mustang";
+</section>
+
+<section class="slide">
+## Objects p.4
+
+    function Car(make, model, year) {
+      this.make = make;
+      this.model = model;
+      this.year = year;
+    }
+
+    var mycar = new Car("Eagle", "Talon TSi", 1993);
+</section>
+
+<section class="slide">
+## Objects p.5
+
+    var Animal = {
+      type: "Invertebrates",
+      displayType : function(){
+        console.log(this.type);
+      }
+    }
+
+    var animal1 = Object.create(Animal);
+    animal1.displayType();
+</section>
+
+<section class="slide">
+## Objects p.6
+
+    objectName.methodname = function_name;
+
+    var myObj = {
+      myMethod: function(params) {
+        // ...do something
+      }
+    };
+</section>
+
+<section class="slide">
+## Objects p.7
+
+    var myobj = new Object;
+    myobj.a = 5;
+    myobj.b = 12;
+
+    delete myobj.a;
+</section>
+
+<section class="slide">
+## Objects p.8
+
+    var fruit = {name: "apple"};
+    var fruitbear = {name: "apple"};
+
+    fruit == fruitbear
+    fruit === fruitbear
+</section>
+
+<section class="slide">
+## Errors, exceptions
+
+* `throw`
+* `try ... catch`
+</section>
+
+<section class="slide">
+## Exceptions
+
+* `Error`
+* `EvalError`
+* `InternalError`
+* `RangeError`
+* `ReferenceError`
+* `SyntaxError`
+* `TypeError`
+* `URIError`
+* `DOMException` and `DOMError`
+</section>
+
+<section class="slide">
+## Custom exceptions
+
+    function UserException(message) {
+      this.message = message;
+      this.name = "UserException";
+    }
+
+    UserException.prototype.toString = function() {
+      return this.name + ': "' + this.message + '"';
+    }
+
+    throw new UserException("Value too high");
+</section>
+
+<section class="slide">
+## try ... catch ... finally!
+
+    function f() {
+      try {
+        console.log(0);
+        throw "bogus";
+      } catch(e) {
+        console.log(1);
+        return true;
+        console.log(2);
+      } finally {
+        console.log(3);
+        return false;
+        console.log(4);
+      }
+      console.log(5);
+    }
+    f();
+</section>
+
+<section class="slide">
+## Recap: JavaScript
+
+* lightweight
+* dynamic
+* interpreted
+* prototype-based
+* dynamic typing
+* treats functions as first-class citizens
+</section>
+
+<section class="slide">
+## Support for multiple paradigms
+
+* object-oriented
+* imperative
+* functional
+* [others](http://cs.lmu.edu/~ray/notes/paradigms/)
+</section>
+
+<section class="slide">
+## First-class functions
+
+### Functions
+
+performs a specific task, packaged as a unit; promotes code reuse; provides structure
+
+* pass functions as arguments
+* anonymous and nested functions
+* non-local variables and closures
+* partial application
+* returning functions as results
+* assigning functions to variables
+* equality comparisons
+</section>
+
+<section class="slide">
+## Popular libraries
+
+* jquery
+* [d3](https://d3js.org/) - visualization
+* [react](https://facebook.github.io/react/) - UI
+* [three.js](http://threejs.org/) - 3D
+* [moment](http://momentjs.com/) - date & time
+* [Chart.js](http://www.chartjs.org/) - charts
+* [Modernizr](https://modernizr.com/) - feature detection
+* [Async.js](https://github.com/caolan/async) - async stuffs
+* [lodash](https://lodash.com/) - utility
+</section>
+
+<section class="slide">
+## Things you need to check out
+
+* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+* [Semantic UI](http://semantic-ui.com/)
+* [Node.js](https://nodejs.org/en/)
+* [This list of cool stuffs!](http://www.one-tab.com/page/UPUiwpU7REymx0nYLg23OQ)
+</section>
+
+<section class="slide">
+# Thank you!
+</section>
+
+<!-- End slides. -->
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<div aria-role="navigation">
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+</div>
+
+<!-- deck.status snippet -->
+<p class="deck-status" aria-role="status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- End extension snippets. -->
+</div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+<!-- <script src="extensions/markdown/markdown.min.js"></script> -->
+<script src="extensions/markdown/marked.min.js"></script>
+<script src="extensions/markdown/deck.markdown.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+$(function() {
+  $.deck('.slide');
+});
+</script>
+</body>
+</html>
